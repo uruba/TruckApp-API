@@ -13,9 +13,9 @@ class ApiController extends Controller
 
 		$response['items'] = [];
 
-		$response['items']['ets2c'] = (new Fetchers\Ets2cFetcher('http://ets2c.com'))->fetch();
+		$response['items']['ets2c'] = (new Fetchers\Ets2cFetcher(config('meetups.url.ets2c')))->fetch();
 		$response['items']['truckers.events'] =
-			(new Fetchers\TruckerseventsFetcher('http://truckers.events/api/events'))->fetch();
+			(new Fetchers\TruckerseventsFetcher(config('meetups.url.TruckersEvents')))->fetch();
 
 		$error = false;
 

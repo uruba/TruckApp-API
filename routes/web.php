@@ -16,3 +16,4 @@ $app->get('/', function () {
 });
 
 $app->get('/v1/meetup-list', 'ApiController@getMeetupList');
+$app->get('/v1/news', 'ApiController@getSubscribedNews');

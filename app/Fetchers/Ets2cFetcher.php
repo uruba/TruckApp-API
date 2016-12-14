@@ -21,12 +21,11 @@ class Ets2cFetcher extends FetcherAbstract {
 			return null;
 		}
 
-
-		$items = array();
+		$items = [];
 
 		foreach (((new \DOMXPath($dom))->query("//*[@class='row']")) as $element)
 		{
-			$item = array();
+			$item = [];
 
 			try
 			{
