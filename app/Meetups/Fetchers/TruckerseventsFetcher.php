@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Fetchers;
+namespace App\Meetups\Fetchers;
 
 use App\Helpers\HttpUtils;
 use App\Interfaces\Fetchers\FetcherAbstract;
