@@ -18,18 +18,17 @@ class TruckerseventsFetcher extends FetcherAbstract {
                 {
                     foreach ($json['response'] as $entry)
                     {
-                            $item = array();
+                        $item = array();
 
+                        $item['server'] = implode(" ", [$entry['game'], $entry['server']]);
+                        $item['time'] = $entry['startTimestamp'];
+                        $item['location'] = $entry['startCity'];
+                        $item['organiser'] = $entry['organiser']['name'];
+                        $item['language'] = $entry['language'];
+                        $item['participants'] = $entry['participants'];
+                        $item['relativeURL'] = '';
 
-                                    $item['server'] = implode(" ", [$entry['game'], $entry['server']]);
-                                    $item['time'] = $entry['startTimestamp'];
-                                    $item['location'] = $entry['startCity'];
-                                    $item['organiser'] = $entry['organiser']['name'];
-                                    $item['language'] = $entry['language'];
-                                    $item['participants'] = $entry['participants'];
-                                    $item['relativeURL'] = '';
-
-                                    $items[] = $item;
+                        $items[] = $item;
                     }
                 } catch (Exception $e)
                 {
